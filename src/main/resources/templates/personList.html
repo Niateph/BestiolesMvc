@@ -1,0 +1,24 @@
+<html xmlns:th="http://www.thymeleaf.org">
+	<head>
+	<linkrel="stylesheet" th:href="@{/resources/css/main.css}"/>
+		<metacharset="utf-8">
+		<title>Liste des Espèces</title>
+	</head>
+	<body>
+		<table class="mainTable">
+			<thead><!--... --></thead>
+				<tbody>
+					<tr th:each="personItem : ${personList}">
+						<td th:text="${personItem.age}"/>
+						<td th:text="${personItem.firstname}"/>
+						<td th:text="${personItem.lastname}"/>
+						<td th:text="${personItem.animals.size}"/>
+						
+						<span th:each="animal : ${personItem.animals}">
+							<td th:text="${animal.name}"><td>
+						</span>
+					</tr>
+				</tbody>
+		</table>
+	</body>
+</html>

@@ -1,0 +1,21 @@
+<html xmlns:th="http://www.thymeleaf.org">
+	<head>
+	<linkrel="stylesheet" th:href="@{/resources/css/main.css}"/>
+		<metacharset="utf-8">
+		<title>Liste des Espèces</title>
+	</head>
+	<body>
+		<table class="mainTable">
+			<thead><!--... --></thead>
+				<tbody>
+					<tr th:each="animalItem: ${animalList}">
+						<td th:text="${animalItem.color}"/>
+						<td th:text="${animalItem.name}"/>
+						<td th:text="${animalItem.sex}"/>
+						<td th:text="${animalItem.sex}"/>
+						<td th:text="${animalItem.species.latinName}"/>
+					</tr>
+				</tbody>
+		</table>
+	</body>
+</html>

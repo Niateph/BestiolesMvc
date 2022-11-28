@@ -1,0 +1,19 @@
+<html xmlns:th="http://www.thymeleaf.org">
+	<head>
+	<linkrel="stylesheet" th:href="@{/resources/css/main.css}"/>
+		<metacharset="utf-8">
+		<title>Liste des Espèces</title>
+	</head>
+	<body>
+		<table class="mainTable">
+			<thead><!--... --></thead>
+				<tbody>
+					<tr th:if="${indexEdited}" th:each="speciesItem: ${speciesList}">
+						<td th:text="${speciesItem.commonName}"/>
+						<td th:text="${speciesItem.latinName}"/>
+					
+					</tr>
+				</tbody>
+		</table>
+	</body>
+</html>
