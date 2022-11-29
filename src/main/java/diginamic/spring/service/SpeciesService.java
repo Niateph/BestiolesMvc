@@ -13,6 +13,13 @@ import diginamic.spring.repository.SpeciesRepository;
 public class SpeciesService {    
     @Autowired SpeciesRepository speciesRepository;
     
+    int indexEdited;
+    
+    public void editClickedWithIndex(int indexClicked){
+	System.out.println("indexClicked : "+indexClicked);
+	this.indexEdited = indexClicked;
+    }
+    
     public Optional<Species> find(Integer id) {
 	return speciesRepository.findById(id);
     }

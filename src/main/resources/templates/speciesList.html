@@ -8,10 +8,15 @@
 		<table class="mainTable">
 			<thead><!--... --></thead>
 				<tbody>
-					<tr th:if="${indexEdited}" th:each="speciesItem: ${speciesList}">
-						<td th:text="${speciesItem.commonName}"/>
-						<td th:text="${speciesItem.latinName}"/>
-					
+					<tr th:each="speciesItem: ${speciesList}">
+						<div th:if="${indexEdited}==${speciesItemStat.index}">
+							<!--form here-->
+						</div>
+						<div th:unless="${indexEdited}==${speciesItemStat.index}">
+							<td th:text="${speciesItem.commonName}"/>
+							<td th:text="${speciesItem.latinName}"/>
+							<td th:class="editLink" th:onclick="editClickedWithIndex(speciesItemStat.index)" th:text="Edit"/>
+						</div>
 					</tr>
 				</tbody>
 		</table>
